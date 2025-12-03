@@ -4,18 +4,22 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    CustomActions input;
+    const string idle = "Idle";
+    const string walk = "Walk";
 
+    CustomActions input;
+    Animator animator;
     NavMeshAgent agent;
-    
-    //Movement
+
     [SerializeField] ParticleSystem clickEffect;
     [SerializeField] LayerMask clickableLayers;
 
+    float lookRotationSpeed = 8f;
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
 
         input = new CustomActions();
         AssignInputs();
@@ -47,5 +51,30 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         input.Disable();
+    }
+
+    void Update()
+    {
+        FaceTarget();
+        SetAnimations();
+    }
+
+    void FaceTarget()
+    {
+        Vector3 direction = (agent.destination - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * lookRotationSpeed);
+    }
+
+    void SetAnimations()
+    {
+        if(agent.velocity == Vector3.zero)
+        {
+            animator.Play(idle);
+        }
+        else
+        {
+            animator.Play(walk);
+        }
     }
 }
