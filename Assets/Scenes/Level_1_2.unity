@@ -2636,7 +2636,7 @@ GameObject:
   - component: {fileID: 1180430862}
   - component: {fileID: 1180430861}
   m_Layer: 0
-  m_Name: InvisibleWall_Bridge
+  m_Name: Bridge_Invisible_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2651,7 +2651,7 @@ Transform:
   m_GameObject: {fileID: 1180430859}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7070956, y: 0.7070956, z: 0.0039760503, w: 0.0039760503}
-  m_LocalPosition: {x: 305.81934, y: 880.28564, z: 429.86157}
+  m_LocalPosition: {x: 369.7, y: 880.3, z: 236.7}
   m_LocalScale: {x: 258.6659, y: 4.1699996, z: 163.21889}
   m_ConstrainProportionsScale: 0
   m_Children: []
