@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Deprecated/Scenes/TestScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/MainMenu_Export.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 2570ba4c5b531a949b38c98c5f805f63
   - enabled: 1
     path: Assets/Scenes/Level_1_1.unity
